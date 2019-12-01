@@ -5,6 +5,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TestString {
     @Test
@@ -23,5 +25,15 @@ public class TestString {
        Set<String> set = new HashSet<>();
        set.add("1");
        set.stream().forEach(System.out::println);
+   }
+   @Test
+   public void  t2(){
+        new 回文数字().isPalindrome(121);
+   }
+   @Test
+   public void t3(){
+       Pattern p = Pattern.compile("java",Pattern.CASE_INSENSITIVE);
+       Matcher m = p.matcher("java-JAVA-JaVa");
+      System.out.println( m.replaceAll("替换"));
    }
 }
