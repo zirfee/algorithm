@@ -7,7 +7,7 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SocketServer implements Runnable{
+public class SocketServer{
     private static final Logger logger = LoggerFactory.getLogger(SocketServer.class);
     public static final int PORT=7777;
     private ServerSocket server;
@@ -16,15 +16,9 @@ public class SocketServer implements Runnable{
         server= new ServerSocket(PORT);
     }
 
-    public static void main(String[] args) {
-        try {
-            new SocketServer().run();
-        } catch (IOException e) {
-            logger.error("服务器启动失败");
-        }
-    }
 
-    public void run(){
+
+    public void start(){
           while (isRun){
               Socket socket=null;
               try {

@@ -21,24 +21,6 @@ public class Client implements Runnable{
           this.queue=queue;
       }
 
-    public static void main(String[] args) throws IOException {
-        Queue<String> queue = new LinkedList();
-        try {
-            new Thread(new Client(queue)).start();
-        } catch (IOException e) {
-            logger.error("client线程启动失败");
-        }
-
-
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String s=null;
-        while((s=reader.readLine())!=null){
-            synchronized (queue){
-                queue.offer(s);
-                 queue.notify();
-            }
-        }
-    }
 
       public void run(){
               while (true) {
