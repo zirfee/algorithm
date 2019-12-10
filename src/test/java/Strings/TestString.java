@@ -33,4 +33,9 @@ public class TestString {
         int[] se={1,8,6,2,5,4,8,3,7};
        System.out.println( new 最多水容器().maxArea(se));
     }
+    @Test
+    public void 最长公共前缀(){
+        String[] s = {"ser","s"};
+        System.out.println(new 最长公共前缀().longestCommonPrefix(s));
+    }
 }
